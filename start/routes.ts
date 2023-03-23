@@ -17,9 +17,11 @@
 | import './routes/customer'
 |
 */
-
 import Route from '@ioc:Adonis/Core/Route'
+import Database from '@ioc:Adonis/Lucid/Database'
 
-Route.get('/', async () => {
-  return { hello: 'world', autor: 'mangunza' }
-})
+Route.group(() => {
+  Route.get('/', async () => {
+    return Database.from('users').select('*')
+  })
+}).prefix('/api')
