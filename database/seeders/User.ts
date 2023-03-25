@@ -3,16 +3,20 @@ import User from 'App/Models/User'
 
 export default class extends BaseSeeder {
   public async run() {
-    const uniquekey = 'eMail'
+    const uniquekey = 'email'
 
     await User.updateOrCreateMany(uniquekey, [
       {
-        eMail: 'virk@adonisjs.com',
-        password: 'secret',
+        email: 'virk@adonisjs.com',
+        password: 'admin',
       },
       {
-        eMail: 'romain@adonisjs.com',
-        password: 'supersecret',
+        email: 'romain@adonisjs.com',
+        password: 'admin',
+      },
+      {
+        email: 'johnny@mangunza.com',
+        password: 'admin',
       },
     ])
   }

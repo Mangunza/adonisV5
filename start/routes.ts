@@ -24,4 +24,6 @@ Route.group(() => {
   Route.get('/', async () => {
     return Database.from('users').select('*')
   })
+
+  Route.post('/login', 'AuthController.login')
 }).prefix('/api')
